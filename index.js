@@ -2,7 +2,7 @@ const {Composer} = require('telegraf')
 
 const map = new Map()
 
-module.exports = (timeout = 100) => Composer.mount(['photo', 'video'], (ctx, next) => {
+module.exports = (timeout = 100) => Composer.mount(['photo', 'video', 'document'], (ctx, next) => {
   const message = ctx.message || ctx.channelPost
   if (!message.media_group_id) {
     return next()
